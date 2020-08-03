@@ -7,15 +7,21 @@ const marked = require('marked');
 
 function MarkdownEditor(props) {
   return (
-    <textarea id="editor" cols="100" onInput={props.handleInput}>
-      {props.markDown}
-    </textarea>
+    <div className="content_wrapper">
+      <h2>Markdown Editor</h2>
+      <textarea id="editor" className="md_container" cols="100" onInput={props.handleInput}>
+        {props.markDown}
+      </textarea>
+    </div>
   )
 }
 
 function RenderHTML(props) {
   return (
-    <section dangerouslySetInnerHTML={{__html: props.content}}></section>
+    <section className="content_wrapper">
+      <h2>HTML Previewer</h2>
+      <div className="html_view_wrapper" dangerouslySetInnerHTML={{__html: props.content}}></div>
+    </section>
   )
 }
 
@@ -39,7 +45,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <main>
+      <main className="main_content">
         <MarkdownEditor markDown={this.state.markdown} handleInput={this.handleInput}/>
         <RenderHTML content={this.state.markdown}/>
       </main>

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -7,9 +11,36 @@
   pointer-events: none;
 }
 
+.main_content {
+  margin: auto;
+  background: blue;
+  // width: 85vw;
+  text-align: center;
+}
+
 #editor {
   resize: vertical;
-  width: 50vw;
+  min-height: 24px;
+  width: 85vw;
+  box-shadow: inset 0px -1px 2px grey;
+}
+
+.content_wrapper {
+  width: 85vw;
+  padding-bottom: 34px;
+  margin: auto;
+  text-align: center;
+}
+
+
+.md_container, .html_view_wrapper {
+  // width: 80vw;
+  border: 5px solid darkblue;
+  border-radius: 5px;
+}
+
+.html_view_wrapper {
+  background: white;
 }
 
 @media (prefers-reduced-motion: no-preference) {
